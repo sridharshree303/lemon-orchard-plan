@@ -120,12 +120,10 @@ The planning assumption of 150 to 160 plants per acre is well within this layout
 
 ### Risks & Challenges
 
-- Lemon harvesting requires skilled labour, especially in the summer peak season
-- Labour shortage can affect timely picking
-- The first 4 years need patient capital with limited orchard income
-- Price fluctuations can affect annual returns
-- Orchard performance depends on water, nutrition, pruning, and pest management quality
-- Final plant density and variety selection must be technically validated
+- Skilled labour needed for summer harvest
+- First 4 years require patient capital
+- Price fluctuations affect returns
+- Performance depends on weather and pest management
 
 ## Project Cost Estimate (10 Acres)
 
