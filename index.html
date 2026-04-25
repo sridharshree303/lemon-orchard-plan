@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Lemon Farms — Nellore, Andhra Pradesh</title>
+<style>
+/* ─── Reset & Base ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#2e7d32;--brand-light:#4caf50;--brand-dark:#1b5e20;
+  --gold:#f9a825;--gold-light:#fdd835;
+  --bg:#f7f8f4;--card:#ffffff;--text:#263238;--text-light:#546e7a;
+  --radius:12px;--shadow:0 4px 24px rgba(0,0,0,.08);
+  --hero-height:100vh;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden}
+
+/* ─── Utility ─── */
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ─── Scroll-reveal ─── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ─── Navigation ─── */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:14px 0;transition:background .4s,box-shadow .4s}
+nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 20px rgba(0,0,0,.08)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none;letter-spacing:-.5px;transition:color .4s}
+nav.scrolled .logo{color:var(--brand-dark)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav ul a{text-decoration:none;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.8px;transition:color .3s}
+nav.scrolled ul a{color:var(--text-light)}
+nav ul a:hover{color:var(--gold)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer}
+.nav-toggle span{display:block;width:26px;height:3px;background:#fff;margin:5px 0;border-radius:2px;transition:background .3s}
+nav.scrolled .nav-toggle span{background:var(--text)}
+
+/* ─── Hero ─── */
+.hero{position:relative;height:var(--hero-height);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('exportsbusinessmodel/Andhra_Lemon_Farmer_In_a_realistic_style_a_person_wearing_a_straw_ZW-xIf1s.webp') center/cover no-repeat;filter:brightness(.45)}
+.hero-content{position:relative;z-index:2;max-width:820px;padding:0 24px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px;letter-spacing:-1px}
+.hero h1 span{color:var(--gold-light)}
+.hero .subtitle{font-size:clamp(1rem,2vw,1.35rem);color:rgba(255,255,255,.88);max-width:640px;margin:0 auto 36px}
+.hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.btn-primary{background:var(--gold);color:var(--brand-dark);box-shadow:0 4px 20px rgba(249,168,37,.4)}
+.btn-outline{border:2px solid rgba(255,255,255,.6);color:#fff}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+
+/* ─── Stats Banner ─── */
+.stats{background:var(--brand-dark);padding:48px 0}
+.stats .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center}
+.stat-item h3{font-size:2.4rem;color:var(--gold-light);font-weight:800}
+.stat-item p{color:rgba(255,255,255,.8);font-size:.9rem;margin-top:4px}
+.stat-item h3 .counter{display:inline}
+
+/* ─── Section ─── */
+section{padding:88px 0}
+section:nth-child(even){background:#fff}
+.section-tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--brand);background:rgba(46,125,50,.08);padding:6px 16px;border-radius:50px;margin-bottom:14px}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text);line-height:1.25;margin-bottom:16px;letter-spacing:-.5px}
+.section-desc{font-size:1.05rem;color:var(--text-light);max-width:680px;margin-bottom:40px}
+
+/* ─── Two-col Layout ─── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.two-col img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* ─── Cards Grid ─── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.card{background:var(--card);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow);border-top:4px solid var(--brand);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.card .icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--brand-light),var(--brand-dark));display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;margin-bottom:18px}
+.card h4{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.card p{font-size:.92rem;color:var(--text-light);line-height:1.65}
+
+/* ─── Timeline ─── */
+.timeline{position:relative;padding-left:40px;margin-top:40px}
+.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--brand-light),var(--gold))}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-item::before{content:'';position:absolute;left:-33px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--brand);border:3px solid var(--bg);box-shadow:0 0 0 4px rgba(46,125,50,.2)}
+.tl-item h4{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.tl-item p{font-size:.92rem;color:var(--text-light)}
+
+/* ─── Table ─── */
+.table-wrap{overflow-x:auto;margin:32px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+thead{background:var(--brand-dark);color:#fff}
+th{padding:14px 16px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid #eee}
+tbody tr:hover{background:rgba(46,125,50,.04)}
+.table-note{margin-top:16px;padding:16px 20px;background:rgba(249,168,37,.1);border-left:4px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;font-size:.9rem;color:var(--text)}
+
+/* ─── Phases (Roadmap) ─── */
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:40px}
+.phase{background:#fff;border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.phase::before{content:attr(data-phase);position:absolute;top:-14px;right:-8px;font-size:6rem;font-weight:900;color:rgba(46,125,50,.04);line-height:1}
+.phase .badge{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:50px;background:var(--brand);color:#fff;margin-bottom:14px}
+.phase h4{font-size:1.15rem;font-weight:700;margin-bottom:10px}
+.phase ul{padding-left:18px;font-size:.9rem;color:var(--text-light)}
+.phase ul li{margin-bottom:6px}
+
+/* ─── Why-invest strip ─── */
+.invest-strip{background:linear-gradient(135deg,var(--brand-dark) 0%,#1a3a1c 100%);color:#fff;padding:80px 0}
+.invest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:40px}
+.invest-item{text-align:center;padding:24px}
+.invest-item .num{font-size:2.2rem;font-weight:900;color:var(--gold-light);margin-bottom:8px}
+.invest-item p{font-size:.92rem;color:rgba(255,255,255,.8)}
+
+/* ─── Footer ─── */
+footer{background:#111;color:rgba(255,255,255,.5);text-align:center;padding:36px 0;font-size:.82rem}
+footer a{color:var(--gold-light);text-decoration:none}
+
+/* ─── Responsive ─── */
+@media(max-width:860px){
+  .two-col{grid-template-columns:1fr;gap:32px}
+  nav ul{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--brand-dark);flex-direction:column;padding:20px 24px;gap:16px}
+  nav ul.open{display:flex}
+  nav ul a{color:#fff!important}
+  .nav-toggle{display:block}
+}
+
+/* ─── Pulse dot on hero ─── */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(249,168,37,.5)}70%{box-shadow:0 0 0 18px rgba(249,168,37,0)}}
+.hero .pulse-dot{width:14px;height:14px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse 2s infinite;vertical-align:middle;margin-right:8px}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAVIGATION ════════ -->
+<nav id="topnav">
+  <div class="container">
+    <a href="#" class="logo"><span style="font-size:1.5em">🍋</span> Organic Lemon Farms</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#background">Market</a></li>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#implementation">Plan</a></li>
+      <li><a href="#financials">Financials</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#invest">Why Invest</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Invest in <span>Lemon Orchards</span></h1>
+    <p class="subtitle">A scalable, high-density orchard model in Nellore, Andhra Pradesh — India's citrus powerhouse. Long-term yields, government support, and a clear path from farm to export brand.</p>
+    <div class="cta-row">
+      <a href="#financials" class="btn btn-primary"><span class="pulse-dot"></span> View Financials</a>
+      <a href="#roadmap" class="btn btn-outline">Growth Roadmap →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STATS BANNER ════════ -->
+<div class="stats">
+  <div class="container">
+    <div class="stat-item reveal">
+      <h3><span class="counter" data-target="3.8">0</span>M Tonnes</h3>
+      <p>India's annual lemon &amp; lime output</p>
+    </div>
+    <div class="stat-item reveal">
+      <h3>₹<span class="counter" data-target="200">0</span> Cr</h3>
+      <p>Summer turnover — Nellore belt</p>
+    </div>
+    <div class="stat-item reveal">
+      <h3><span class="counter" data-target="1.15">0</span> L Acres</h3>
+      <p>Lemon farming across AP</p>
+    </div>
+    <div class="stat-item reveal">
+      <h3><span class="counter" data-target="23.2">0</span>M Tonnes</h3>
+      <p>Global lemon &amp; lime production (2024)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ MARKET BACKGROUND ════════ -->
+<section id="background">
+  <div class="container">
+    <div class="two-col reveal">
+      <div>
+        <span class="section-tag">Market Context</span>
+        <h2 class="section-title">Andhra Pradesh — India's Citrus Belt</h2>
+        <p class="section-desc">The Nellore district, anchored by the Gudur and Podalakur markets, is a major lemon trading hub with strong year-round demand.</p>
+        <ul style="padding-left:20px;color:var(--text-light);font-size:.95rem;line-height:2">
+          <li>India is one of the world's largest producers of lemons and limes.</li>
+          <li>Lemons serve fresh consumption, beverages, pickles, lemon oil, citric-acid processing, and pectin manufacturing.</li>
+          <li>Growing export demand from the Middle East and international food industries.</li>
+        </ul>
+      </div>
+      <div>
+        <picture>
+          <source srcset="exportsbusinessmodel/Lemon_Orchard_Aerial_In_a_tranquil_aerial_view_neat_rows_of_lush_P_zUMGof.webp" type="image/webp">
+          <img src="exportsbusinessmodel/image_a897f1f6.png" alt="Lemon orchard on red soil in Nellore region" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ OPPORTUNITY ════════ -->
+<section>
+  <div class="container reveal" style="text-align:center;max-width:780px">
+    <span class="section-tag">The Opportunity</span>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto">10-Acre Orchard → 100+ Acre Agri Brand</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto">Start with a 10-acre high-density lemon orchard in Rapur, Nellore — low-cost red-soil land, drip irrigation, automation, and phased scale-up. Expand into aggregation, branding, direct sales, exports, and lemon processing.</p>
+  </div>
+</section>
+
+<!-- ════════ BUSINESS MODEL ════════ -->
+<section id="model">
+  <div class="container">
+    <span class="section-tag">Business Model</span>
+    <h2 class="section-title">Four Structural Advantages</h2>
+    <p class="section-desc">An orchard model designed for capital efficiency, long-duration cash flow, and scale.</p>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="icon">📐</div>
+        <h4>High-Density Planning</h4>
+        <p>Rectangular 19 ft × 14 ft spacing fits ~163 plants per acre, improving yield per unit land and reducing cost over time.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">💧</div>
+        <h4>Bulk &amp; Drip Efficiency</h4>
+        <p>Bulk cultivation with automated drip irrigation and fertigation lowers input, labour, and supervision costs at scale.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🏛️</div>
+        <h4>Government Support</h4>
+        <p>Subsidies for solar pumps, drip irrigation, horticulture development, and Kisan Credit reduce capital burden significantly.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">📈</div>
+        <h4>15+ Year Cash Flow</h4>
+        <p>A structured orchard generates recurring income from Year 5 to Year 20+, with yields increasing as trees mature.</p>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:12px">Core Revenue Logic</h3>
+      <ul style="padding-left:20px;color:var(--text-light);font-size:.95rem;line-height:2">
+        <li>Revenue starts meaningfully from <strong>Year 5</strong> onward.</li>
+        <li>Yield increases with plant maturity — trees reach peak around Year 8–10.</li>
+        <li><strong>Summer harvest</strong> is the main earnings driver.</li>
+        <li>Branding, direct sales, and processing can improve price realization beyond mandi sales.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ IMPLEMENTATION ════════ -->
+<section id="implementation">
+  <div class="container">
+    <div class="two-col reveal">
+      <div>
+        <span class="section-tag">Implementation</span>
+        <h2 class="section-title">Orchard Development Plan</h2>
+        <p class="section-desc">Rapur, Nellore — low-cost cultivable red-soil land with practical horticulture expansion potential.</p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <h4>Year 0 — Land &amp; Infrastructure</h4>
+            <p>Land preparation, fencing, bore/irrigation setup, drip installation.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Year 1–2 — Planting &amp; Establishment</h4>
+            <p>Planting selected varieties (TAL-94-14, CRS-21, Petluru Pulusu, Balaji). Training, pruning, nutrition management.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Year 3–4 — Canopy &amp; Intercrop</h4>
+            <p>Canopy development, pest management, intercropping (lemon + coconut, mirchi, grams) to support cash flow.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Year 5+ — Commercial Harvest</h4>
+            <p>Full-scale summer harvesting begins. Yield increases year-on-year as trees reach maturity.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="exportsbusinessmodel/image_8e2d2c5f.png" alt="Intercropping layout — coconut and lemon, front and top view" loading="lazy" style="margin-bottom:24px">
+        <div style="background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)">
+          <h4 style="margin-bottom:12px;font-size:1rem">Plantation Density</h4>
+          <p style="font-size:.9rem;color:var(--text-light)"><strong>19 ft × 14 ft</strong> rectangular spacing → 266 sq ft per plant → <strong>~163 plants/acre</strong> (theoretical). Conservative planning: <strong>150 plants/acre</strong> allowing for pathways and field margins.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros & Risks side by side -->
+    <div class="two-col reveal" style="margin-top:64px">
+      <div class="card" style="border-top-color:var(--brand)">
+        <h4 style="color:var(--brand);margin-bottom:14px">✅ Key Advantages</h4>
+        <ul style="padding-left:18px;font-size:.9rem;color:var(--text-light);line-height:2">
+          <li>Fixed income potential for 15–20 years</li>
+          <li>Yield improves as trees mature</li>
+          <li>Government subsidies reduce cost</li>
+          <li>Intercropping possible in early years</li>
+          <li>Creates rural employment</li>
+          <li>Automation reduces labour intensity</li>
+          <li>Scale lowers per-acre cost</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top-color:var(--gold)">
+        <h4 style="color:#e65100;margin-bottom:14px">⚠️ Risks &amp; Challenges</h4>
+        <ul style="padding-left:18px;font-size:.9rem;color:var(--text-light);line-height:2">
+          <li>Skilled labour needed for summer picking</li>
+          <li>Labour shortage during peak season</li>
+          <li>First 4 years require patient capital</li>
+          <li>Price fluctuations affect returns</li>
+          <li>Performance depends on water &amp; pest mgmt</li>
+          <li>Density &amp; variety must be field-validated</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FINANCIALS ════════ -->
+<section id="financials">
+  <div class="container">
+    <span class="section-tag">Financials</span>
+    <h2 class="section-title">Project Cost &amp; Returns</h2>
+    <p class="section-desc">Conservative estimates for a 10-acre orchard. Summer-only yields; actual returns expected to be higher.</p>
+
+    <!-- Cost Table -->
+    <div class="two-col reveal">
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">Investment Estimate (10 Acres)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th style="text-align:right">Estimate</th></tr></thead>
+            <tbody>
+              <tr><td>Land acquisition (10 acres)</td><td style="text-align:right">₹80 L – ₹1 Cr</td></tr>
+              <tr><td>Plantation, fencing, drip irrigation</td><td style="text-align:right">₹10 L</td></tr>
+              <tr><td>Year 0–4 management</td><td style="text-align:right">₹10 L</td></tr>
+              <tr style="font-weight:700;background:rgba(46,125,50,.04)"><td>Total Pre-Harvest Investment</td><td style="text-align:right">₹1.00 – ₹1.20 Cr</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-note">Subsidies, intercrop income, and land appreciation are <strong>not</strong> included in these estimates.</div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">Planning Assumptions</h3>
+        <ul style="padding-left:18px;font-size:.92rem;color:var(--text-light);line-height:2.2">
+          <li>150 plants/acre × 10 acres = <strong>1,500 trees</strong></li>
+          <li>Selling price: <strong>₹80 – ₹100/kg</strong></li>
+          <li>Operating cost assumed at <strong>50%</strong> of revenue</li>
+          <li>Year 5: 20 kg/tree · Year 6: 25 kg · Year 7+: 30 kg</li>
+          <li>Based on <strong>summer yields only</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projection Table -->
+    <div class="reveal" style="margin-top:56px">
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px">Yield &amp; Revenue Projection (Year 5–8)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th><th>Yield / Tree</th><th>Total Yield</th>
+              <th style="text-align:right">Revenue (₹80/kg)</th><th style="text-align:right">Revenue (₹100/kg)</th>
+              <th style="text-align:right">Est. Cost @50%</th><th style="text-align:right">Est. Profit @50%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>5</strong></td><td>20 kg</td><td>30,000 kg</td>
+              <td style="text-align:right">₹24,00,000</td><td style="text-align:right">₹30,00,000</td>
+              <td style="text-align:right">₹12 – 15 L</td><td style="text-align:right">₹12 – 15 L</td>
+            </tr>
+            <tr>
+              <td><strong>6</strong></td><td>25 kg</td><td>37,500 kg</td>
+              <td style="text-align:right">₹30,00,000</td><td style="text-align:right">₹37,50,000</td>
+              <td style="text-align:right">₹15 – 18.75 L</td><td style="text-align:right">₹15 – 18.75 L</td>
+            </tr>
+            <tr>
+              <td><strong>7</strong></td><td>30 kg</td><td>45,000 kg</td>
+              <td style="text-align:right">₹36,00,000</td><td style="text-align:right">₹45,00,000</td>
+              <td style="text-align:right">₹18 – 22.5 L</td><td style="text-align:right">₹18 – 22.5 L</td>
+            </tr>
+            <tr style="background:rgba(46,125,50,.04)">
+              <td><strong>8</strong></td><td>30 kg</td><td>45,000 kg</td>
+              <td style="text-align:right">₹36,00,000</td><td style="text-align:right">₹45,00,000</td>
+              <td style="text-align:right">₹18 – 22.5 L</td><td style="text-align:right">₹18 – 22.5 L</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-note">
+        <strong>Note:</strong> Yield per tree and market price both tend to increase beyond Year 8 as trees reach full maturity and demand grows. Actual returns from Year 9 onward are expected to be significantly higher than shown above.<br><br>
+        These estimates cover <strong>summer yields only</strong> and exclude off-season income, intercrop revenue, subsidies, land appreciation, export premium, branding premium, and processing margins.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SCALABILITY ════════ -->
+<section>
+  <div class="container">
+    <span class="section-tag">Scale &amp; Optimize</span>
+    <h2 class="section-title">From 10 Acres to an Agri Brand</h2>
+    <p class="section-desc">Scale the orchard, bypass mandi deductions (~12%), and build direct channels.</p>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="icon">🏷️</div>
+        <h4>Own Brand</h4>
+        <p>Create a farm brand for premium lemons. Sort, grade, and sell directly to wholesalers, retailers, and food businesses.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h4>Export Channels</h4>
+        <p>Explore Middle East &amp; international exports — lemons, paddy, mirchi, green gram, black gram, and cereals.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏭</div>
+        <h4>Processing Unit</h4>
+        <p>Lemon juice, peel products, oil extraction, preserved lemons — a government-subsidised processing plant can attract regional farmers.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h4>Marketplace Hub</h4>
+        <p>Buyer-seller marketplace at the factory outlet. Direct trade eliminates 12% mandi charges and improves farmer realization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ROADMAP ════════ -->
+<section id="roadmap">
+  <div class="container">
+    <span class="section-tag">Growth Roadmap</span>
+    <h2 class="section-title">Three-Phase Expansion</h2>
+    <p class="section-desc">From a single orchard to a ₹10–50 Cr agriculture and supply-chain business.</p>
+
+    <div class="phase-grid reveal">
+      <div class="phase" data-phase="01">
+        <span class="badge">Phase 1</span>
+        <h4>Orchard Asset Model</h4>
+        <ul>
+          <li>Start with 10 acres</li>
+          <li>Prove yield &amp; unit economics</li>
+          <li>Standardize cultivation model</li>
+          <li>Establish labour &amp; management system</li>
+        </ul>
+      </div>
+      <div class="phase" data-phase="02">
+        <span class="badge" style="background:var(--gold);color:var(--brand-dark)">Phase 2</span>
+        <h4>Scale &amp; Aggregation</h4>
+        <ul>
+          <li>Expand to 100+ acres year-on-year</li>
+          <li>Aggregate lemons from nearby farmers</li>
+          <li>Build grading &amp; collection center</li>
+          <li>Improve farmer pricing vs. mandi routes</li>
+        </ul>
+      </div>
+      <div class="phase" data-phase="03">
+        <span class="badge" style="background:#e65100">Phase 3</span>
+        <h4>Processing &amp; Market Hub</h4>
+        <ul>
+          <li>Lemon processing plant (govt subsidised)</li>
+          <li>Regional lemon trade hub</li>
+          <li>Direct export to Middle East &amp; industries</li>
+          <li>₹10–50 Cr supply-chain business</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WHY INVEST ════════ -->
+<section class="invest-strip" id="invest">
+  <div class="container" style="text-align:center">
+    <span class="section-tag" style="color:#fff;background:rgba(255,255,255,.12)">Why Invest</span>
+    <h2 class="section-title" style="color:#fff">Agriculture Is Evergreen</h2>
+    <div class="invest-grid">
+      <div class="invest-item reveal">
+        <div class="num">15–20 yr</div>
+        <p>Recurring income from a single orchard asset</p>
+      </div>
+      <div class="invest-item reveal">
+        <div class="num">50%+</div>
+        <p>Estimated net margin after operating costs</p>
+      </div>
+      <div class="invest-item reveal">
+        <div class="num">12%</div>
+        <p>Mandi charges eliminated with direct branding</p>
+      </div>
+      <div class="invest-item reveal">
+        <div class="num">₹50 Cr</div>
+        <p>Potential scale with processing &amp; exports</p>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <a href="#financials" class="btn btn-primary" style="font-size:1rem">Review the Numbers ↑</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOUNDER NOTES ════════ -->
+<section>
+  <div class="container reveal" style="max-width:780px">
+    <span class="section-tag">Founder Notes</span>
+    <h2 class="section-title">Key Considerations</h2>
+    <ul style="padding-left:20px;color:var(--text-light);font-size:.95rem;line-height:2.2">
+      <li>The first 4 years require <strong>patient capital</strong> with limited orchard income.</li>
+      <li>Final spacing, variety, and irrigation design should be validated by <strong>horticulture experts</strong>.</li>
+      <li>Local market turnover and acreage figures should be verified before formal presentation.</li>
+      <li>The financial model is intentionally <strong>conservative</strong> — summer yields only.</li>
+      <li>Direct branding and processing can <strong>materially improve</strong> profit beyond the base farm model.</li>
+    </ul>
+    <p style="margin-top:24px;font-size:.85rem;color:var(--text-light)"><strong>Data sources:</strong> FAOSTAT (2024 global production), Wikipedia (India production share), founder field research (Nellore market data).</p>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <p>Organic Lemon Farms — Nellore Region, Andhra Pradesh &nbsp;|&nbsp; Prepared for investor discussion</p>
+  </div>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script>
+/* ── Nav scroll effect ── */
+const nav = document.getElementById('topnav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ── Scroll-reveal ── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+
+/* ── Counter animation ── */
+function animateCounters() {
+  document.querySelectorAll('.counter').forEach(counter => {
+    const target = parseFloat(counter.dataset.target);
+    const decimals = (target % 1 !== 0) ? 1 : 0;
+    const duration = 1800;
+    const start = performance.now();
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = (target * ease).toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(step);
+      else counter.textContent = target.toFixed(decimals);
+    }
+    requestAnimationFrame(step);
+  });
+}
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.unobserve(e.target); }});
+}, { threshold: 0.3 });
+statsObs.observe(document.querySelector('.stats'));
+
+/* ── Smooth close mobile nav on link click ── */
+document.querySelectorAll('nav ul a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+});
+</script>
+</body>
+</html>
